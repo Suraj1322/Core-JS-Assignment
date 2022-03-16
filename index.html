@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/main.css">
+
+</head>
+<body>
+    
+    <div class="calculator-area">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4 m-auto">
+                    <div class="calculator-block">
+                        <h2>Calculator</h2>
+                        <div class="input-area">
+                            <input type="text" name="input1" value="0" id="input1">
+                            <input type="text" name="input2" value="0" id="input2">
+                        </div>
+                        <div class="result" id="result">0</div>
+                        <div class="history" id="history">history</div>
+                        <div class="calc-button">
+                            <div class="add" id="add" data="+" onclick="add()">
+                                <p>Addition</p>
+                            </div>
+                            <div class="add" id="Substract" data="-" onclick="substract()">
+                                <p>Substract</p>
+                            </div>
+                            <div class="add" id="multiply" data="*" onclick="multiply()">
+                                <p>Multiplication</p>
+                            </div>
+                            <div class="add" id="divide" data="/" onclick="divide()">
+                                <p>Division</p>
+                            </div>
+                            <div class="add" id="exponent" data="a^b" onclick="expo()">
+                                <p>Exponent</p>
+                            </div>
+                            <div class="add" id="clear" onclick="empty()">
+                                <p>Clear</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/jquery-2.1.4.js"></script> 
+    <script type="text/javascript" src="js/bootstrap.min.js"></script> 
+    <script>
+        
+        function add(){
+            var value1 = document.getElementById("input1").value;
+            var value2 = document.getElementById("input2").value;
+            var total = Number(value1) + Number(value2);
+            document.getElementById("result").innerHTML=total;
+            document.getElementById("history").innerHTML = Number(value1) + " + " + Number(value2) + " = " + Number(total);
+        }
+
+        function substract(){
+            var value1 = document.getElementById("input1").value;
+            var value2 = document.getElementById("input2").value;
+            var total = Number(value1) - Number(value2);
+            document.getElementById("result").innerHTML=total;
+            document.getElementById("history").innerHTML = Number(value1) + " - " + Number(value2) + " = " + Number(total);
+        }
+
+        function multiply(){
+            var value1 = document.getElementById("input1").value;
+            var value2 = document.getElementById("input2").value;
+            var total = Number(value1) * Number(value2);
+            document.getElementById("result").innerHTML=total;
+            document.getElementById("history").innerHTML = Number(value1) + " * " + Number(value2) + " = " + Number(total);
+        }
+
+        function divide(){
+            var value1 = document.getElementById("input1").value;
+            var value2 = document.getElementById("input2").value;
+            var total = Number(value1) / Number(value2);
+            document.getElementById("result").innerHTML=total;
+            document.getElementById("history").innerHTML = Number(value1) + " / " + Number(value2) + " = " + Number(total);
+        }
+
+        function expo(){
+            var value1 = document.getElementById("input1").value;
+            var value2 = document.getElementById("input2").value;
+            var total = Math.pow(Number(value1),Number(value2));
+            document.getElementById("result").innerHTML=total;
+            document.getElementById("history").innerHTML = Number(value1) + " ^ " + Number(value2) + " = " + Number(total);
+        }
+
+        function empty(){
+            document.getElementById("input1").value=0;
+            document.getElementById("input2").value=0;
+            document.getElementById("result").innerHTML="0";
+            document.getElementById("history").innerHTML="history";
+        }
+        
+    </script>
+</body>
+</html>
